@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import axios from 'axios';
+//import router from './router';
 
 // import
 import PrimeVue from 'primevue/config';
@@ -13,6 +14,8 @@ import "primevue/resources/themes/viva-dark/theme.css";
 import "primevue/resources/primevue.min.css";
 //icons
 import 'primeicons/primeicons.css';
+
+
 
 // cada componente se importa de forma separada +++++++++++++++++++++++++
 //import Button from "primevue/button"
@@ -27,6 +30,7 @@ import Dialog from 'primevue/dialog';
 import Menubar from 'primevue/menubar';
 
 const app = createApp(App);
+//app.use(router);
 app.use(PrimeVue);
 // aqui agregamos el componente ******************************************
 //app.component('Button', Button);

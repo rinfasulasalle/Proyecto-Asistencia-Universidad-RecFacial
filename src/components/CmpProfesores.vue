@@ -1,15 +1,15 @@
 <template>
   <div class="componente">
     <div class="difuminado">
-      <h1>TABLA GRUPO USUARIOS</h1>
+      <h1>TABLA PROFESORES</h1>
     </div>
     <div class="card">
       <div class="datatable-container">
       <DataTable
         v-model:editingRows="editingRows"
-        :value="grupUsers"
+        :value="grupProfes"
         editMode="row"
-        dataKey="id_grupo"
+        dataKey="id_profesor"
         tableClass="editable-cells-table"
         tableStyle="min-width: 50rem"
         @row-edit-save="onRowEditSave"
@@ -18,7 +18,7 @@
         :paginatorTemplate="paginatorTemplate"
         :rowsPerPageOptions="[5,10,25]"
       >
-        <Column field="id_grupo" header="id_grupo" style="width: 20%"></Column>
+        <Column field="id_profesor" header="id_profesor" style="width: 20%"></Column>
         <Column field="nombre_grupo" header="nombre_grupo" style="width: 20%">
           <template #editor="{ data, field }">
             <InputText v-model="data[field]" />
@@ -128,7 +128,7 @@
             console.log(error);
           });
       },
-      // Método para cancelar la eliminación de un usuario
+      // Método para cancelar la eliminación de un usuarios
       cancelDelete() {
         this.showDeleteDialog = false;
         this.deleteIdGrupo = '';
