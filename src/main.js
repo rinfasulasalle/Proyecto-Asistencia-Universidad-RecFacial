@@ -23,6 +23,7 @@ import Toolbar from 'primevue/toolbar';
 import Button from 'primevue/button';
 import InputText from 'primevue/inputtext';
 import Dialog from 'primevue/dialog';
+import Menubar from 'primevue/menubar';
 
 const app = createApp(App);
 app.use(PrimeVue);
@@ -36,7 +37,7 @@ app.component('Toolbar', Toolbar);
 app.component('Button', Button);
 app.component('InputText', InputText);
 app.component('Dialog', Dialog);
-
+app.component('Menubar', Menubar);
 
 
 app.mount("#app")
