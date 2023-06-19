@@ -128,7 +128,7 @@ export default {
           console.log(error);
         });
     },
-    // Método para cancelar la eliminación de un usuario
+    // Método para cancelar la eliminación de un usuarios
     cancelDelete() {
       this.showDeleteDialog = false;
       this.deleteIdGrupo = '';
