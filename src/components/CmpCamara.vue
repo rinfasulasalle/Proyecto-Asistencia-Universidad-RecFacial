@@ -1,5 +1,5 @@
-<template>
-    <div class="componente">
+    <template>
+        <div class="componente">
         <h2 class="difuminado">Registros de Asistencia</h2>
         <div>
             <video ref="videoElement" width="640" height="480"></video>
@@ -11,27 +11,25 @@
         </div>
         <div v-if="photoTaken">
             <img :src="photoUrl" alt="Foto de asistencia" />
-            <InputText v-model.trim="dni" placeholder="Ingrese su DNI" />
-            <p>Hora actual: {{ getCurrentTime() }}</p>
-            <Button @click="submitForm" label="Enviar" />
         </div>
+        <InputText v-model.trim="dni" placeholder="Ingrese su DNI" />
+        <p>Hora actual: {{ getCurrentTime() }}</p>
+        <Button @click="submitForm" label="Enviar" />
         <Dialog v-if="showDialog" header="Asistencia Registrada" visible>
             ¡La asistencia se tomó correctamente!
         </Dialog>
-    </div>
-</template>
+        </div>
+    </template>
     
-<script>
+    <script>
     import { ref } from 'vue';
     import { Dialog, Button, InputText } from 'primevue/dialog';
-    import { Toast } from 'primevue/toast';
     
     export default {
         components: {
         Dialog,
         Button,
         InputText,
-        Toast,
         },
         data() {
         return {
@@ -76,19 +74,14 @@
             if (this.dni.length > 0 && this.dni.length <= 8) {
             this.showDialog = true;
             } else {
-            this.$toast.add({
-                severity: 'error',
-                summary: 'Error',
-                detail: 'Ingrese un DNI válido (máximo 8 cifras)',
-                life: 3000,
-            });
+            alert('Ingrese un DNI válido (máximo 8 cifras)');
             }
         },
         },
     };
-</script>
+    </script>
     
-<style>
+    <style>
     .componente {
         background-image: url("https://s1.1zoom.me/big3/267/336028-SoLoVuShKa.jpg");
         background-size: cover;
@@ -108,4 +101,5 @@
         -webkit-backdrop-filter: blur(8px);
         margin: 20px;
     }
-</style>
+    </style>
+    
